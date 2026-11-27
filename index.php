@@ -6,8 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sportdle</title>
     <link rel="stylesheet" href="style.css">
+
     <?php
-        include('game.php');
+    session_start();
+
+    $mots = [
+        "BALLON", "PANIER", "JOUEUR", "TENNIS",
+        "BASKET", "VOLLEY", "HOCKEY", "KARATE",
+        "AVIRON", "SQUASH", "SPRINT", "COURSE",
+        "PELOTE", "DRIBLE", "TACLES", "MATCHS",
+        "BUTEUR", "FAUTES", "REVERS", "PLAQUE",
+        "MUSCLE", "CARDIO", "RAPPEL", "EQUIPE",
+        "GAGNER", "FINALE", "ARENES", "POTEAU",
+        "FILETS", "DEPART", "RELAIS", "CRAMPE"
+    ];
+
+    if (!isset($_SESSION['motMystere'])) {
+
+        $_SESSION['motMystere'] = $mots[array_rand($mots)];
+        $_SESSION['proposition'] = "";
+        $_SESSION['essais'] = 0;
+        $_SESSION['termine'] = false;
+    }
     ?>
 </head>
 <body>
@@ -16,13 +36,12 @@
         <button>☰</button>
         <h1>Sportdle</h1>
         <button>⚙</button>
-        <h2>thelio</h2>
     </header>
 
     <main>
         <h2>Bienvenue sur Sportdle</h2>
         <p>Trouve le mot de 6 lettres en 6 tentatives.</p>
-        <p>Le mot mystère est : <?php echo $motMystere; ?></p>
+        
         <div id="grille">
             <div class="case"></div>
             <div class="case"></div>

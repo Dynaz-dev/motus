@@ -5,10 +5,11 @@
 }
 
 body {
-    background-color: #121213;
-    color: white;
+    background-color: #0a052a;
+    color: rgb(98, 9, 206);
     font-family: Arial, sans-serif;
-    min-height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
 }
@@ -17,14 +18,14 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    border-bottom: 1px solid #333;
+    padding: 15px 20px;
+    border-bottom: 1px solid #4d03ed;
 }
 
 header button {
     background: none;
     border: none;
-    color: white;
+    color: rgb(98, 9, 206);
     font-size: 25px;
     cursor: pointer;
 }
@@ -32,18 +33,57 @@ header button {
 main {
     flex: 1;
     text-align: center;
-    padding: 40px 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 main p {
-    margin-top: 10px;
     color: #aaa;
 }
 
-footer {
-    text-align: center;
-    padding: 20px;
-    border-top: 1px solid #333;
-    color: #aaa;
-    font-size: 14px;
+#grille {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 6px;
+    width: min(330px, 45vh, 90vw);
+}
+
+.case {
+    aspect-ratio: 1;
+    background-color: #140c36;
+    border: 2px solid #493477;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    font-weight: bold;
+    border-radius: 4px;
+    color: white;
+}
+
+.clavier {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 5px;
+    width: 100%;
+    max-width: 445px;
+}
+
+.clavier button {
+    background-color: #201344;
+    color: white;
+    border: 1px solid #6209ce;
+    border-radius: 5px;
+    height: 40px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.clavier button:hover {
+    background-color: #6209ce;
+}
+.special {
+    grid-column: span 2;
 }

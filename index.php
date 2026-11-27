@@ -16,6 +16,7 @@
         <button>☰</button>
         <h1>Sportdle</h1>
         <button>⚙</button>
+        <h2>thelio</h2>
     </header>
 
     <main>
